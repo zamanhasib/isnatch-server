@@ -1,16 +1,30 @@
-import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import { BadRequestException, Body, Controller, Delete, Get, HttpStatus, Param, Post, Put, Res } from '@nestjs/common';
 import { SaleService } from './sale.service';
 import { SaleDto } from './sale.dto';
 import { ApiTags } from '@nestjs/swagger';
+import { Connection } from 'mongoose';
+import { InjectConnection } from '@nestjs/mongoose';
 
 @ApiTags('sales')
 @Controller('sales')
 export class SaleController {
-    constructor(private saleService: SaleService) {}
+    constructor(@InjectConnection() private readonly mongoConnection: Connection, private saleService: SaleService) {}
 
     @Post()
-    create(@Body() SaleDto: SaleDto) {
-        return this.saleService.create(SaleDto);
+    async create(@Body() saleDto: SaleDto, @Res() res: any) {
+        const session = await this.mongoConnection.startSession();
+        session.startTransaction();
+        try {
+            const newSale: any = await this.saleService.create(saleDto, session);
+            await session.commitTransaction();
+            return res.status(HttpStatus.OK).send(newSale);
+        } catch (error) {
+            await session.abortTransaction();
+            throw new BadRequestException(error);
+        } finally {
+            session.endSession();
+        }
+        //return this.saleService.create(SaleDto);
     }
 
     @Get()

@@ -1,4 +1,4 @@
 export class CustomerDto {
-    name: string;
-    balance: number;
+    name?: string;
+    balance?: number;
 }
