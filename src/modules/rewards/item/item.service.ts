@@ -13,6 +13,10 @@ export class ItemService {
         return createdItem.save();
     }
 
+    async update(id: string, itemDto: ItemDto): Promise<Item> {
+        return this.itemModel.findByIdAndUpdate(id, itemDto).exec();
+    }
+
     async findAll(): Promise<Item[]> {
         return this.itemModel.find().exec();
     }

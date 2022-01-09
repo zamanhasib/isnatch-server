@@ -13,6 +13,18 @@ export class Item {
 
   @Prop([{type: SchemaTypes.ObjectId, ref: 'Category'}])
   categories: Types.ObjectId[];
+
+  @Prop()
+  instructions: Array<string>;
+
+  @Prop()
+  redeemAt: string;
+
+  @Prop()
+  redeemBy: string;
+
+  @Prop()
+  subItems: Array<any>;
 }
 
 export const ItemSchema = SchemaFactory.createForClass(Item);

@@ -3,8 +3,9 @@ import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common'
 import { ItemService } from './item.service';
 import { ItemDto } from './item.dto';
 import { Item } from 'src/schemas/item.schema';
+import { ApiTags } from '@nestjs/swagger';
 
-
+@ApiTags('items')
 @Controller('items')
 export class ItemController {
     constructor(private itemService: ItemService) {}
@@ -26,7 +27,7 @@ export class ItemController {
 
     @Put(':id')
     async update(@Param('id') id: string, @Body() ItemDto: ItemDto) {
-        return `This action updates a #${id} category`;
+        return this.itemService.update(id, ItemDto);
     }
 
     @Delete(':id')
