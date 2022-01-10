@@ -24,7 +24,6 @@ export class SaleController {
         } finally {
             session.endSession();
         }
-        //return this.saleService.create(SaleDto);
     }
 
     @Get()
