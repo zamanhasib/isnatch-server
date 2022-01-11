@@ -1,73 +1,94 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
-</p>
+## Intro
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-  
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+This repo is to build next-generation cashback application, I named it 'iSnatch - Get ready to snatch cash back'.
 
-## Description
+This is an experimental project with React framework [Next.js](https://nextjs.org/) and Node.js framework [Nest.js](https://nestjs.com/).
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Live Demo
 
-## Installation
+To learn about iSnatch app, take a look at the following resources:
+
+- [iSnatch Web App](https://www.isnatch.xyz/) - see the live project in action.
+- [iSnatch API](https://isnatch.herokuapp.com/api/) - see the API spec in swagger.
+
+You can check out [Backend GitHub repository](https://github.com/zamanhasib/isnatch-server) 
+
+You can check out [Frontend GitHub repository](https://github.com/zamanhasib/isnatch-web) 
+
+- your feedback and contributions are welcome!
+
+## Tech Stack Diagram (more coming)
+
+![Tech Stack](./public/assets/high-level-tech-stack-diagram.png)
+
+## Database Collections
+
+![Tech Stack](./public/assets/mongo-collections-relationship.JPG)
+
+![Transaction sample](./public/assets/transaction-example.png)
+
+## Current Features
+
+- Category listing 
+![categories](./public/assets/category-listing.JPG)
+
+- Items by Category listing
+![Items listing](./public/assets/product-listing.JPG)
+
+- Add sub items to Cart and Payment auto calculation
+![Cart listing](./public/assets/cart-items-payment.JPG)
+
+- Payment successful notification
+![payment notification](./public/assets/cashback-successful.JPG)
+
+## Upcoming Functional Features
+
+- Location based listing (more granular listing and search)
+- Vendor management (vendor can manage their products)
+- Admin management (admin can add vendors and manage access)
+- Customer profile management (customer can see their history and details)
+- Vendor based cashback (customer can use cashback only to the venodor who gave cashback)
+- Gift cashback (system to add gifts to regular customers profile)
+- Cashback expiry (system to auto clear cashback if unused for long time)
+
+## Upcoming Tech Features
+
+- Use GraphQL for api between frontend and backend
+- Add Redis caching
+- Login system with JWT
+- Elastic search functionality
+- Use CDN for better performance
+- Split payment to seperate microservice
+- Implement Kafka message queue
+- Use micro front ends to split large app
+
+## Local Run
+
+Run the frontend and backend app seperately:
 
 ```bash
-$ npm install
+npm run dev
+# or
+yarn dev
 ```
 
-## Running the app
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-```bash
-# development
-$ npm run start
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file. This is the HOME page
 
-# watch mode
-$ npm run start:dev
+Backend APIs can be accessed on [http://localhost:5000/](http://localhost:5000/). This is hosted seperately in Nest.js backend application.
 
-# production mode
-$ npm run start:prod
-```
+## Deployment on Vercel and Heroku
 
-## Test
+The Front End application is deployed using [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+The Back End application is deployed using [Heroku Platform](https://heroku.com/).
 
 ## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- Author - [Hasib Zaman](https://www.linkedin.com/in/zamanhasib/)
+- Website - [About Me](https://hasibzaman.wordpress.com/)
 
 ## License
 
-  Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+This app is [MIT licensed](https://opensource.org/licenses/MIT).
