@@ -30,16 +30,12 @@ You can check out [Frontend GitHub repository](https://github.com/zamanhasib/isn
 ## Current Features
 
 - Category listing 
-![categories](./public/assets/category-listing.JPG)
 
 - Items by Category listing
-![Items listing](./public/assets/product-listing.JPG)
 
-- Add sub items to Cart and Payment auto calculation
-![Cart listing](./public/assets/cart-items-payment.JPG)
+- Add sub items to Cart and Payment/Cashback calculation
 
-- Payment successful notification
-![payment notification](./public/assets/cashback-successful.JPG)
+- Payment transaction successful notification
 
 ## Upcoming Functional Features
 
@@ -77,12 +73,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file. This is the HOME page
 
 Backend APIs can be accessed on [http://localhost:5000/](http://localhost:5000/). This is hosted seperately in Nest.js backend application.
-
-## Deployment on Vercel and Heroku
-
-The Front End application is deployed using [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-The Back End application is deployed using [Heroku Platform](https://heroku.com/).
 
 ## Stay in touch
 
